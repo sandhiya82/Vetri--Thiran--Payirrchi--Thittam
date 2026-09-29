@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduGenie - AI Learning Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>EduGenie</h1>
+
+    <p class="subtitle">
+        Google Gemini Powered Learning Assistant
+    </p>
+
+
+    <form method="POST" action="/">
+
+        <label for="task">
+            Choose Task
+        </label>
+
+        <select id="task" name="task">
+
+            <option value="qa">
+                Question & Answer
+            </option>
+
+            <option value="explain">
+                Explain Topic
+            </option>
+
+            <option value="quiz">
+                Generate Quiz
+            </option>
+
+            <option value="summary">
+                Summarize
+            </option>
+
+            <option value="learn">
+                Learning Path
+            </option>
+
+        </select>
+
+
+        <label for="user_input">
+            Enter your topic or question
+        </label>
+
+        <textarea
+            id="user_input"
+            name="user_input"
+            rows="8"
+            placeholder="Type your question, topic or text here..."
+            required
+        ></textarea>
+
+
+        <button type="submit">
+            Generate
+        </button>
+
+    </form>
+
+
+    <div class="result-box">
+
+        <h2>Result</h2>
+
+        <pre>{{ result if result else "Your result will appear here..." }}</pre>
+
+    </div>
+
+</div>
+
+</body>
+</html>
